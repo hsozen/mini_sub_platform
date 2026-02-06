@@ -1,17 +1,20 @@
 {
   "functions": {
     "api/*.php": {
-      "runtime": "vercel-php@0.6.0"
+      "runtime": "vercel-php@0.7.4"
     }
   },
-  "routes": [
-    { "src": "^/$", "dest": "/api/index.php" },
-    { "src": "^/login\\.php$", "dest": "/api/login.php" },
-    { "src": "^/register\\.php$", "dest": "/api/register.php" },
-    { "src": "^/logout\\.php$", "dest": "/api/logout.php" },
-    { "src": "^/account\\.php$", "dest": "/api/account.php" },
-    { "src": "^/admin\\.php$", "dest": "/api/admin.php" },
-    { "src": "^/content_free\\.php$", "dest": "/api/content_free.php" },
-    { "src": "^/content_premium\\.php$", "dest": "/api/content_premium.php" }
+  "rewrites": [
+    { "source": "/", "destination": "/api/index.php" },
+
+    { "source": "/login.php", "destination": "/api/login.php" },
+    { "source": "/register.php", "destination": "/api/register.php" },
+    { "source": "/logout.php", "destination": "/api/logout.php" },
+    { "source": "/account.php", "destination": "/api/account.php" },
+
+    { "source": "/content_free.php", "destination": "/api/content_free.php" },
+    { "source": "/content_premium.php", "destination": "/api/content_premium.php" },
+
+    { "source": "/admin.php", "destination": "/api/admin.php" }
   ]
 }
