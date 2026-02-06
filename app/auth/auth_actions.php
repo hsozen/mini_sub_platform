@@ -37,7 +37,7 @@ function auth_register(PDO $pdo, string $username, string $name, string $passwor
     ":username" => $username,
     ":name" => $name,
     ":password_hash" => $hash,
-    ":bio" => null,
+    ":bio" => "",
     ":created_at" => $now,
   ]);
 
