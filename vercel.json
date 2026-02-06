@@ -5,21 +5,13 @@
     }
   },
   "rewrites": [
-    { "source": "/", "destination": "/api/index.php" },
-    
-    { "source": "/(login|register|logout|account)", "destination": "/api/$1.php" },
-    
-    { "source": "/content_free", "destination": "/api/content_free.php" },
-    { "source": "/content_premium", "destination": "/api/content_premium.php" },
-    
-    { "source": "/admin", "destination": "/api/admin.php" }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*).php",
-      "headers": [
-        { "key": "Content-Type", "value": "text/html; charset=utf-8" }
-      ]
+    { 
+      "source": "/(.*)",
+      "destination": "/api/index.php"
+    },
+    { 
+      "source": "/(.*).php",
+      "destination": "/api/$1.php"
     }
   ]
 }
