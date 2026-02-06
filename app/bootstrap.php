@@ -6,6 +6,13 @@ session_start();
 
 $config = require __DIR__ . "/config.php";
 
+$tmpDb = $cfg["db_path"];
+$seedDb = __DIR__ . "/database.sqlite"; // your seeded file in app/
+
+if (!file_exists($tmpDb)) {
+  @copy($seedDb, $tmpDb);
+}
+
 if (!empty($config["session_name"])) {
   // Safe to call after session_start in practice for local MVP, keep simple
   // If you want strict correctness later, we move it before session_start
