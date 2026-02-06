@@ -47,14 +47,14 @@ function auth_register(PDO $pdo, string $username, string $name, string $passwor
     "id" => $id,
     "username" => $username,
     "name" => $name,
-    "bio" => null,
+    "bio" => "",
     "is_paid" => 0,
     "is_featured" => 0,
     "is_admin" => 0,
     "is_active" => 1,
   ];
 
-  $_SESSION["user"] = $user;
+  $_SESSION["user_id"] = (int)$user["id"];$_SESSION["user"] = $user;
 
   return ["ok" => true, "user" => $user];
 }
@@ -94,7 +94,7 @@ function auth_login(PDO $pdo, string $username, string $password): array {
     "is_active" => (int)$row["is_active"],
   ];
 
-  $_SESSION["user"] = $user;
+  $_SESSION["user_id"] = (int)$user["id"];$_SESSION["user"] = $user;
 
   return ["ok" => true, "user" => $user];
 }
