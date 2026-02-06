@@ -18,3 +18,5 @@
 
 # Vendor (only ignore if you are NOT committing Composer deps)
 vendor/
+.vercel
+.env*.local
