@@ -1,5 +1,5 @@
 <?php
-// File: /public/content_free.php
+// File: /api/content_free.php
 declare(strict_types=1);
 
 require __DIR__ . "/../app/bootstrap.php";

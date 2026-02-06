@@ -1,32 +1,9 @@
 {
   "functions": {
-    "api/**/*.php": { "runtime": "vercel-php@0.7.4" }
+    "api/app.php": { "runtime": "vercel-php@0.7.4" }
   },
   "routes": [
-    { "src": "^/$", "dest": "/api/index.php" },
-    { "src": "^/index\\.php$", "dest": "/api/index.php" },
-
-    { "src": "^/login$", "dest": "/api/login.php" },
-    { "src": "^/login\\.php$", "dest": "/api/login.php" },
-
-    { "src": "^/register$", "dest": "/api/register.php" },
-    { "src": "^/register\\.php$", "dest": "/api/register.php" },
-
-    { "src": "^/logout$", "dest": "/api/logout.php" },
-    { "src": "^/logout\\.php$", "dest": "/api/logout.php" },
-
-    { "src": "^/account$", "dest": "/api/account.php" },
-    { "src": "^/account\\.php$", "dest": "/api/account.php" },
-
-    { "src": "^/content_free$", "dest": "/api/content_free.php" },
-    { "src": "^/content_free\\.php$", "dest": "/api/content_free.php" },
-
-    { "src": "^/content_premium$", "dest": "/api/content_premium.php" },
-    { "src": "^/content_premium\\.php$", "dest": "/api/content_premium.php" },
-
-    { "src": "^/admin$", "dest": "/api/admin.php" },
-    { "src": "^/admin\\.php$", "dest": "/api/admin.php" },
-
-    { "handle": "filesystem" }
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/api/app.php" }
   ]
 }

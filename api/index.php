@@ -1,5 +1,5 @@
 <?php
-// File: /public/index.php
+// File: /api/index.php
 declare(strict_types=1);
 
 require __DIR__ . '/../app/bootstrap.php';
