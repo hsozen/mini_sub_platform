@@ -8,7 +8,7 @@ if (!$dbPath) {
 }
 
 return [
-  "db_path" => sys_get_temp_dir() . "/database.sqlite",
+  "db_path" => "/tmp/database.sqlite",
 
   "app_name" => "Mini Sub",
   "session_name" => "minisub_session",

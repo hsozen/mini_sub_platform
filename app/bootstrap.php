@@ -38,6 +38,9 @@ foreach ($helpers as $f) {
 $pdo = db($config);
 $GLOBALS["pdo"] = $pdo;
 
+require_once __DIR__ . "/migrate.php";
+migrate_and_seed($pdo);
+
 // 5) Ensure DB file exists only if your db_path is a filesystem path (sqlite)
 $dbPath = (string)($config["db_path"] ?? "");
 if ($dbPath !== "" && str_starts_with($dbPath, "/") || str_contains($dbPath, ":\\") || str_contains($dbPath, __DIR__)) {
