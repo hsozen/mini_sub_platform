@@ -1,0 +1,20 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Local env / secrets
+.env
+.env.*
+/storage/*.sqlite
+/storage/*.db
+/database.sqlite
+/app/database.sqlite
+*.sqlite
+*.db
+
+# Vendor (only ignore if you are NOT committing Composer deps)
+vendor/
